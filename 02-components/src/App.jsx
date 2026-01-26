@@ -1,5 +1,6 @@
-import Card from './components/card.jsx';
-import Navbar from './components/navbar.jsx';
+import Navbar from './components/Navbar.jsx'
+import Card from './components/card.jsx'
+
 const App = () => {
   return (
     <div>

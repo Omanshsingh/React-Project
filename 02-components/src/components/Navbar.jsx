@@ -2,17 +2,13 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>
-        <div className="nav">
-            <nav>
-                <h2>My Website</h2>
-                <ul>
-                    <li>Home</li>   
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-        </div>
+    <div className="Navbar">
+      <h2>My Website</h2>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
   )
 }

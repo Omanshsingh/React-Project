@@ -1,50 +1,49 @@
-/* --- Global Styles --- */
+/* Global */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- Card Component --- */
-.Card {
-    border: 1px solid #580707;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #ea0404;
-    margin: 10px 0;
-}
-
-.Card h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-.Card p {
-    color: #fff; /* Changed to white so it's readable on red background */
-    line-height: 1.4;
-}
-
-/* --- Navbar Component --- */
+/* Navbar */
 .Navbar {
-    background-color: #333;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Navbar h2 {
-    color: white;
-    margin: 0;
+  color: white;
+  margin: 0;
 }
 
 .Navbar div a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
 }
 
 .Navbar div a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* Card */
+.Card {
+  border: 1px solid #580707;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #ea0404;
+  margin: 10px;
+}
+
+.Card h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.Card p {
+  color: white;
 }
