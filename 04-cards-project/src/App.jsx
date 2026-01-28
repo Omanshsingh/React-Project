@@ -1,13 +1,11 @@
-import { useState } from 'react'
 import './App.css'
 import Card from './components/Card.jsx';
-import React from 'react'
-import User from './components/User.jsx';
+
 
 
 const jobOpenings = [
   {
-    brandLogo: "https://logo.clearbit.com/google.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
     companyName: "Google",
     datePosted: "5 days ago",
     post: "Software Engineer",
@@ -17,7 +15,7 @@ const jobOpenings = [
     location: "Mumbai, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/amazon.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
     companyName: "Amazon",
     datePosted: "2 weeks ago",
     post: "Data Analyst",
@@ -27,7 +25,7 @@ const jobOpenings = [
     location: "Bangalore, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/meta.com",
+    brandLogo: "https://www.facebook.com/images/fb_icon_325x325.png",
     companyName: "Meta",
     datePosted: "10 days ago",
     post: "Frontend Developer",
@@ -37,7 +35,7 @@ const jobOpenings = [
     location: "Remote"
   },
   {
-    brandLogo: "https://logo.clearbit.com/apple.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
     companyName: "Apple",
     datePosted: "3 weeks ago",
     post: "iOS Developer",
@@ -47,7 +45,7 @@ const jobOpenings = [
     location: "Hyderabad, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/netflix.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
     companyName: "Netflix",
     datePosted: "1 week ago",
     post: "Backend Engineer",
@@ -57,7 +55,7 @@ const jobOpenings = [
     location: "Remote"
   },
   {
-    brandLogo: "https://logo.clearbit.com/microsoft.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     companyName: "Microsoft",
     datePosted: "4 days ago",
     post: "Cloud Support Engineer",
@@ -67,7 +65,7 @@ const jobOpenings = [
     location: "Pune, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/tesla.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
     companyName: "Tesla",
     datePosted: "2 months ago",
     post: "Software Test Engineer",
@@ -77,7 +75,7 @@ const jobOpenings = [
     location: "Bangalore, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/ibm.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
     companyName: "IBM",
     datePosted: "6 days ago",
     post: "Data Engineer",
@@ -87,7 +85,7 @@ const jobOpenings = [
     location: "Mumbai, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/oracle.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg",
     companyName: "Oracle",
     datePosted: "3 months ago",
     post: "Database Administrator",
@@ -97,7 +95,7 @@ const jobOpenings = [
     location: "Chennai, India"
   },
   {
-    brandLogo: "https://logo.clearbit.com/salesforce.com",
+    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
     companyName: "Salesforce",
     datePosted: "8 days ago",
     post: "Business Analyst",
@@ -112,9 +110,11 @@ const jobOpenings = [
 const App = () => {
   return (
     <div className="parent">
-      {jobOpenings.map(function (elem) {
-        return <Card key={elem.companyName} brandLogo={elem.brandLogo} companyName={elem.companyName} datePosted={elem.datePosted} post={elem.post} tag1={elem.tag1} tag2={elem.tag2} pay={elem.pay} location={elem.location} /> 
-})}
+      {jobOpenings.map(function (elem,idx) {
+        return <div key={idx}>
+          <Card key={idx} brandLogo={elem.brandLogo} companyName={elem.companyName} datePosted={elem.datePosted} post={elem.post} tag1={elem.tag1} tag2={elem.tag2} pay={elem.pay} location={elem.location} /> 
+
+        </div>})}
       
     </div>
 
