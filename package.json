@@ -1,9 +1,15 @@
 {
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18"
+  "name": "project-1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd 12-notes-app && npm install",
+    "dev": "cd 12-notes-app && npm run dev",
+    "build": "cd 12-notes-app && npm run build",
+    "start": "cd 12-notes-app && npm run preview",
+    "lint": "cd 12-notes-app && npm run lint"
   },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
