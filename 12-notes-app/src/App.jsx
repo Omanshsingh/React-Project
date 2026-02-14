@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { SquarePen } from "lucide-react";
 
@@ -14,7 +14,17 @@ const App = () => {
     setTask(copyTask);
   };
 
-  // 👇 This now ONLY loads the data into the form
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("notes"));
+    if (savedNotes) {
+      setTask(savedNotes);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(task));
+  }, [task]);
+
   const updateButton = (idx) => {
     setNotes(task[idx].notes);
     setDetails(task[idx].details);
@@ -25,13 +35,11 @@ const App = () => {
     e.preventDefault();
 
     if (editIndex !== null) {
-      // UPDATE
       const updatedTasks = [...task];
       updatedTasks[editIndex] = { notes, details };
       setTask(updatedTasks);
       setEditIndex(null);
     } else {
-      // ADD
       setTask([...task, { notes, details }]);
     }
 
@@ -86,9 +94,7 @@ const App = () => {
                 <h4 className="text-xl leading-tight font-bold mb-2">
                   {elem.notes}
                 </h4>
-                <p className="mt-2 leading-tight font-medium">
-                  {elem.details}
-                </p>
+                <p className="mt-2 leading-tight font-medium">{elem.details}</p>
               </div>
 
               <h2
