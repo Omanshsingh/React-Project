@@ -5,7 +5,7 @@ import NotesList from "./Components/NotesList";
 const App = () => {
   const [notes, setNotes] = useState("");
   const [details, setDetails] = useState("");
-  
+  const [error, setError] = useState("");
 
   const [task, setTask] = useState(() => {
     const saved = localStorage.getItem("notes");
@@ -31,21 +31,34 @@ const App = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    if (!notes.trim() || !details.trim()) {
+      setError("Both fields are required.");
+      return;
+    }
+
     if (editIndex !== null) {
       const updatedTasks = [...task];
-      updatedTasks[editIndex] = { notes, details };
+      updatedTasks[editIndex] = {
+        notes: notes.trim(),
+        details: details.trim(),
+      };
       setTask(updatedTasks);
       setEditIndex(null);
     } else {
-      setTask([...task, { notes, details }]);
+      setTask([
+        ...task,
+        { notes: notes.trim(), details: details.trim() },
+      ]);
     }
 
     setNotes("");
     setDetails("");
+    setError("");
   };
 
   return (
-    <div className="h-screen bg-gray-900 text-white lg:flex">
+    <div className="min-h-screen bg-gray-900 text-white lg:flex">
+
       <NoteForm
         notes={notes}
         details={details}
@@ -54,6 +67,12 @@ const App = () => {
         submitHandler={submitHandler}
         editIndex={editIndex}
       />
+
+      {error && (
+        <p className="text-red-500 text-center absolute top-4 left-1/2 -translate-x-1/2">
+          {error}
+        </p>
+      )}
 
       <NotesList
         task={task}
